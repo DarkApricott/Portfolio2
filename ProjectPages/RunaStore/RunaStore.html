@@ -1,0 +1,679 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Run'A Store</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+	
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: darkred;
+            margin: 0;
+            padding: 0;
+        }
+
+        .topnav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 35px;
+            z-index: 50;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .topnav .left-buttons,
+        .topnav .right-buttons {
+            display: flex;
+        }
+
+        .topnav .left-buttons a,
+        .topnav .right-buttons a {
+            color: black;
+            text-align: center;
+            padding: 7px 8px;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-size: 1.2vw;
+        }
+
+        .topnav .left-buttons a {
+            margin-right: 0;
+        }
+
+        .topnav .right-buttons a {
+            margin-left: 0;
+        }
+
+        .topnav .name {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            padding: 14px 16px;
+            font-family: Arial, sans-serif;
+            font-size: 1.5vw;
+            font-weight: bold;
+        }
+
+        .topnav a:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: darkred;
+            color: white;
+        }
+
+        .video-container {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -50;
+        }
+
+        .video-container video {
+            position: absolute;
+            top: -60px;
+            left: -160px;
+            width: 120%;
+            height: 120%;
+        }
+
+        .background-rectangle {
+            position: relative;
+            width: 60%;
+            height: 3000px;
+            background-color: rgba(255, 255, 255, 0.7);
+            left: 20%;
+            padding: 20px;
+            border: thick solid #C700B8;
+        }
+
+        .background-rectangle h1 {
+            padding-top: 45px;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            font-weight: bold;
+            font-size: 60px;
+        }
+
+        .background-rectangle video{
+            display: block;
+            margin: 0 auto;
+            padding-top: 20px;
+            padding-bottom: 100px;
+        }
+		
+		.background-rectangle iframe {
+            display: block;
+            margin: 0 auto;
+            padding-top: 20px;
+            padding-bottom: 100px;
+			width: 890px;
+			height: 500px;
+        }
+
+        .video-right, .video-left, .video-center {
+            padding-top: 0;
+        }
+
+        .video-right {
+            float: right;
+            padding-right: 20px;
+        }
+
+        .video-left {
+            float: left;
+            padding-left: 20px;
+        }
+
+        .video-center {
+            float: none;
+            padding-left: 20px;
+        }
+
+        .background-rectangle table {
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .w-3 {
+            width: 50%;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            padding-left: 20px;
+			padding-right: 20px;
+        }
+
+        h3 {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+        }
+		
+			.wrapper {
+		align-content: center;
+		align-self: center;
+		width:80%;
+		padding-bottom:40px;
+		padding-left: 20px;
+		padding-right: 20px;
+}
+
+.wrapper code {
+  display: block;
+  background: #3F3F3F;
+  color: white;
+  width: 100%;
+  max-height: 300px;
+  white-space: pre;
+  font-size: 15px;
+  line-height: 1.55;
+  padding: 1.55em;
+  border-radius: 12px;
+  overflow-x: scroll;
+text-align: left;
+}
+		  .githubRef img {
+            transition: transform 0.2s;
+        }
+
+        .githubRef img:hover {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topnav">
+        <div class="left-buttons">
+            <a href="../../index.html#groupProjects">Group Projects</a>
+            <a href="../../index.html#soloProjects">Solo Projects</a>
+        </div>
+        <div class="name">Steph Smout</div>
+        <div class="right-buttons">
+            <a href="../../HomePage/Contact/CV_StephSmout.html" target="_blank">CV</a>
+            <a href="../../index.html#aboutMe">About Me</a>
+            <a href="../../index.html#contact">Contact</a>
+        </div>
+    </div>
+
+    <div class="video-container">
+		<img width="100%" src="RunaStoerBackground.png" alt="">
+    </div>
+
+    <div class="background-rectangle">
+        <h1 style="margin-left:130px">Run'A Store 
+		<a class="githubRef" target="_blank" href="https://github.com/DarkApricot/RunaStore">
+		<img style="margin-bottom: -22px " height="80px" src="../../GithubLogo.png" alt="GitHub Logo">
+		</a>
+		</h1>
+        <iframe src="https://www.youtube.com/embed/vfH9kPEfKAg?autoplay=1&mute=1&rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
+		
+<div style="width:100; text-align:center; font-family:Arial; margin-top:0; margin-top: -50px;  margin-left: 30px; margin-right: 30px;">
+		<h2 style="font-size:30px;"> This is project Run'A Store!</h2>
+		<br>
+	<h2 style="font-size:20px;">In here I'll write some info about how the project went! </h2>
+		<br><br>
+		<h3> My contribution: All UI - Boxes / Shelves filling system - The tutorial <br> Timespan: 6 weeks
+		<br><br>
+		3D Models by: Daphne Koelewijn, Nova Schuit<br>
+	2D art by: Mynke Bohane-Vos<br>
+	Developers: Kasper van der Horst, Sander Meijer and me :D <br><br>
+			<a href="https://darkapricott.itch.io/run-a-store" target="_blank">Play the game yourself on Itch.IO!</a></h3>
+</div>
+		<br><br><br>
+        <div class="video-right">
+            <table>
+                <tr>
+                    <td class="w-3">
+						<h2 style="margin-right: -120px; margin-top: -80px;"> Tutorial</h2> <br><br>
+                        <h3 style=" margin-left: 120px;">In this short video I followed the tutorial. <br><br> It shows all menus and most of the features in the game.</h3>
+                    </td>
+                    <td>
+                        <video width="500" height="100%" src="RunaStoreTutorialVid.mp4" controls></video>
+                    </td>
+                </tr>
+            </table>
+			
+		
+			<div class="wrapper" style="width: 100; max-height: 300px; margin-top: -100px; margin-bottom: 100px; margin-right: -120px; margin-left: 120px;">
+				
+				<pre> <code>public class Tutorial : MonoBehaviour
+{
+    public bool DoingTutorial;
+    private int step;
+    private bool replayTutOnStart;
+    private int completedSteps;
+
+    [SerializeField] private Animator animator;
+    [SerializeField] private GameObject[] arrows;
+    [SerializeField] private GameObject[] lines;
+    [SerializeField] private GameObject[] helpingTexts;
+    [SerializeField] private Toggle toggle;
+
+    void Start()
+    {
+        // Deactivate all tutorial arrows initially
+        foreach (var _arrow in arrows)
+        {
+            _arrow.SetActive(false);
+        }
+
+        // Check if the tutorial should replay on start
+        if (PlayerPrefs.GetInt(&quot;ReplayTut&quot;) == 1)
+        {
+            DoingTutorial = true;
+            arrows[0].SetActive(true); // Activate the first tutorial arrow
+        }
+        else
+        {
+            DoingTutorial = false;
+            animator.SetTrigger(&quot;TutCompleted&quot;); // Trigger tutorial completed animation
+            StartCoroutine(TurnOffTut()); // Turn off tutorial after a delay
+        }
+
+        toggle.isOn = DoingTutorial; // Set the toggle state based on DoingTutorial
+    }
+
+    // Move to the next step of the tutorial
+    public void NextStep(int _curStep)
+    {
+        if (DoingTutorial)
+        {
+            if (_curStep == step)
+            {
+                arrows[step].SetActive(false); // Deactivate current arrow
+                step++;
+                arrows[step].SetActive(true); // Activate next arrow
+            }
+        }
+    }
+
+    // Disable the current tutorial arrow
+    public void DisableCurrentArrow()
+    {
+        if (DoingTutorial)
+        {
+            arrows[step].SetActive(false);
+        }
+    }
+
+    // Mark a step as done and check if all steps are completed
+    public void StepDone(int _whichStep)
+    {
+        if (DoingTutorial)
+        {
+            lines[_whichStep].SetActive(true); // Activate the line for the completed step
+            completedSteps = 0;
+
+            // Count the number of completed steps
+            for (int i = 0; i &lt; lines.Length; i++)
+            {
+                if (lines[i].activeInHierarchy == true)
+                {
+                    completedSteps++;
+                }
+            }
+
+            // If all steps are completed, end the tutorial
+            if (completedSteps == lines.Length)
+            {
+                DoingTutorial = false;
+                animator.SetTrigger(&quot;TutCompleted&quot;); // Trigger tutorial completed animation
+                SetIfPlayTut(); // Update PlayerPrefs for replaying tutorial
+            }
+        }
+    }
+
+    // Show the helping text for a specific step
+    public void HelpingTexts(int _whichText)
+    {
+        if (DoingTutorial)
+        {
+            TurnOffHelpingTexts(); // Turn off all helping texts
+            helpingTexts[_whichText].SetActive(true); // Activate the specified helping text
+        }
+    }
+
+    // Turn off all helping texts
+    public void TurnOffHelpingTexts()
+    {
+        if (DoingTutorial)
+        {
+            foreach (var _helpingTexts in helpingTexts)
+            {
+                _helpingTexts.SetActive(false);
+            }
+        }
+    }
+
+    // Toggle the setting for replaying the tutorial on start
+    public void SetIfPlayTut()
+    {
+        replayTutOnStart = !replayTutOnStart;
+        PlayerPrefs.SetInt(&quot;ReplayTut&quot;, Convert.ToInt32(replayTutOnStart)); // Save the setting in PlayerPrefs
+    }
+
+    // Coroutine to turn off the tutorial animator after a delay
+    private IEnumerator TurnOffTut()
+    {
+        yield return new WaitForSeconds(1);
+        animator.gameObject.SetActive(false);
+    }
+}
+</code> </pre> </div>
+		
+        </div>
+		
+		
+		<br>
+		
+			<h2 class="w-3" style="width: 100%; margin-left: -40px"> Spawning Boxes </h2>
+		<div class="wrapper" style="width: 90%; max-height: 300px;">
+				
+				<pre> <code>public class SpawnBoxes : MonoBehaviour
+{
+    public GameObject Box;
+    public Transform TruckTransform;
+    private UIManager uiMan;
+
+    [SerializeField] private ProductLibrary productLib;
+
+    private int amountDiffTypes;
+
+    // List of products sorted on catagories
+    private List&lt;List&lt;int&gt;&gt; ListCats = new();
+    [SerializeField] private List&lt;int&gt; Cat1 = new();
+    [SerializeField] private List&lt;int&gt; Cat2 = new();
+    [SerializeField] private List&lt;int&gt; Cat3 = new();
+    [SerializeField] private List&lt;int&gt; Cat4 = new();
+    [SerializeField] private List&lt;int&gt; Cat5 = new();
+    [SerializeField] private List&lt;int&gt; Cat6 = new();
+
+    private float AmountBoxesSpawned;
+    public float boxlocal;
+
+    public List&lt;int&gt; ListNewProducts = new();
+
+    [SerializeField] private Transform boxSpawnPoint;
+
+    void Start()
+    {
+        ListCats.Add(Cat1);
+        ListCats.Add(Cat2);
+        ListCats.Add(Cat3);
+        ListCats.Add(Cat4);
+        ListCats.Add(Cat5);
+        ListCats.Add(Cat6);
+
+        uiMan = FindObjectOfType&lt;UIManager&gt;();
+    }
+
+    void Update()
+    {
+        if (uiMan.HasCheckedOut == true)
+        {
+            SortProducts(ref uiMan.NewlyBoughtProducts, uiMan.AmountItemsBought);
+            uiMan.HasCheckedOut = false;
+        }
+    }
+
+    // Puts products in seperate lists based on catagories
+    public void SortProducts(ref List&lt;int&gt; _newProductList, int _amountProducts)
+    {
+        amountDiffTypes = 0;
+        AmountBoxesSpawned = 0;
+
+        _newProductList.Sort();
+        ListNewProducts = _newProductList;
+
+        for (int i = 0; i &lt; _amountProducts; i++)
+        {
+            if (i &gt;= 1)
+            {
+                if (productLib.products[_newProductList[i - 1]].storageType != productLib.products[_newProductList[i]].storageType)
+                {
+                    amountDiffTypes++;
+                }
+            }
+
+            ListCats[amountDiffTypes].Add(_newProductList[i]);
+        }
+
+        if (_newProductList.Count &lt;= 10 && _newProductList.Count &gt; 0 && amountDiffTypes == 0)
+        {
+            AmountBoxesSpawned = 1;
+        }
+
+        SpawnBoxesOfCatagory(_newProductList);
+    }
+
+    // Calculates how many boxes must be spawned per catagory + 10 products per box
+    private void SpawnBoxesOfCatagory(List&lt;int&gt; _newProductList)
+    {
+        int _totalBoxesSpawned = 0;
+
+        if (amountDiffTypes &gt; 0)
+        {
+            for (int i = 0; i &lt; amountDiffTypes + 1; i++)
+            {
+                AmountBoxesSpawned = Mathf.Ceil((float)ListCats[i].Count / 10);
+                _totalBoxesSpawned += (int)AmountBoxesSpawned;
+                ListCats[i].Clear();
+            }
+
+            for (int i = 0; i &lt; _totalBoxesSpawned; i++)
+            {
+                SpawnBox();
+            }
+        }
+        else
+        {
+            AmountBoxesSpawned = Mathf.Ceil((float)_newProductList.Count / 10);
+
+            for (int i = 0; i &lt; AmountBoxesSpawned; i++)
+            {
+                SpawnBox();
+            }
+        }
+    }
+
+    private void SpawnBox()
+    {
+        Instantiate(Box, boxSpawnPoint.position, Quaternion.identity);
+    }
+}</code> </pre> </div>
+		
+		<br><br><br><br><br><br>
+		
+			<h2 class="w-3" style="width: 100%; margin-left: -40px"> Filling Boxes / Shelves </h2>
+		<div class="wrapper" style="width: 90%; max-height: 300px;">
+				
+				<pre> <code>public class Box : MonoBehaviour
+{
+    private UIManager uiMan;
+    private ObjectManager oManager;
+    private SpawnBoxes spawnBoxes;
+    private Tutorial tut;
+
+    [SerializeField] private ProductLibrary productLib;
+    [SerializeField] private List&lt;int&gt; products = new();
+    [SerializeField] private TMP_Text boxText;
+
+    private readonly int maxCapacity = 10;
+    [SerializeField] private ShelveTypes type;
+    [SerializeField] private Sprite[] iconSprites;
+    [SerializeField] private Image iconImage;
+    [SerializeField] private SpriteRenderer[] icons;
+
+    void Start()
+    {
+        uiMan = FindObjectOfType&lt;UIManager&gt;();
+        oManager = FindObjectOfType&lt;ObjectManager&gt;();
+        spawnBoxes = FindObjectOfType&lt;SpawnBoxes&gt;();
+        tut = FindObjectOfType&lt;Tutorial&gt;();
+
+        FillBox(ref spawnBoxes.ListNewProducts);
+
+        SetBoxText();
+
+        oManager.boxes.Add(gameObject);
+    }
+
+    // Sets catagory based on first gathered item
+    private void FillBox(ref List&lt;int&gt; _productsList)
+    {
+        while ((products.Count &lt; maxCapacity) &amp;&amp; (_productsList.Count &gt; 0))
+        {
+            if (products.Count &gt;= 1)
+            {
+                // Fills itself with products of set catagory
+                if (productLib.products[_productsList[0]].storageType == type)
+                {
+                    products.Add(_productsList[0]);
+                    _productsList.RemoveAt(0);
+                }
+                else
+                {
+                    break;
+                }
+            }
+            else
+            {
+                products.Add(_productsList[0]);
+                _productsList.RemoveAt(0);
+                type = productLib.products[products[0]].storageType;
+
+                iconImage.sprite = iconSprites[(int)type];
+
+                foreach (SpriteRenderer item in icons)
+                {
+                    item.sprite = productLib.products[products[0]].itemIcon;
+                }
+            }
+        }
+
+        // Delete if box spawned empty (rare glitch)
+        if (products.Count == 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    void SetBoxText()
+    {
+        boxText.text = products.Count + &quot;/&quot; + maxCapacity;
+    }
+    // Checks if what box hit is shelf
+    private void OnCollisionEnter(Collision _other)
+    {
+        if (_other.gameObject.TryGetComponent(out ShelveObject shelve))
+        {
+            // Is shelf stockable with current products?
+            if (shelve.Type == type)
+            {
+                StartCoroutine(RestockShelf(shelve));
+            }
+        }
+
+        // Add items to Stocker inventory
+        if (_other.gameObject.TryGetComponent(out WorkerBrain worker))
+        {
+            StartCoroutine(SupplyStocker(worker));
+        }
+    }
+
+    // Fills if shelf / box isn&#39;t empty, then adds to shelf inventory
+    private IEnumerator RestockShelf(ShelveObject _shelf)
+    {
+        _shelf.occupied = true;
+        int _stockDiff = _shelf.storageCapacity - _shelf.products.Count;
+
+        for (int i = 0; i &lt; _stockDiff; i++)
+        {
+            if (products.Count != 0)
+            {
+                _shelf.products.Add(products[0]);
+                products.RemoveAt(0);
+
+                _shelf.FilledPercentage();
+
+                SetBoxText();
+                tut.StepDone(2);
+                tut.NextStep(4);
+                yield return new WaitForSeconds(0.15f);
+            }
+        }
+
+        _shelf.occupied = false;
+
+        if (products.Count == 0)
+        {
+            oManager.boxes.Remove(gameObject);
+            Destroy(gameObject);
+        }
+    }
+
+    // Add products to Stocker inventory
+    private IEnumerator SupplyStocker(WorkerBrain worker)
+    {
+        if (worker.type == WorkerType.stocker)
+        {
+            for (int i = 0; i &lt; maxCapacity; i++)
+            {
+                if (products.Count != 0)
+                {
+                    worker.products.Add(products[0]);
+                    products.RemoveAt(0);
+
+                    SetBoxText();
+                    yield return new WaitForSeconds(0f);
+                }
+            }
+
+            if (products.Count == 0)
+            {
+                oManager.boxes.Remove(this.gameObject);
+                Destroy(gameObject);
+            }
+        }
+    }
+}</code> </pre> </div>
+		
+		
+        <div class="video-left">
+            <table>
+                <tr>
+                    <td>
+                        <video width="500" height="300" src="BoxesRunaStore.mp4" autoplay muted></video>
+                    </td>
+                    <td class="w-3">
+                        <h3 style="margin-top: -100px">A manager script saves the info of what products you bought. <br><br>Based on the amount of each catagory boxes get spawned in with a max. of 10 products (of the same catagory) per box.</h3>
+                    </td>
+                </tr>
+            </table>
+        </div>
+		
+		
+</div>
+</body>
+</html>

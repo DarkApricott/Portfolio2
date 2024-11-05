@@ -1,0 +1,329 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Portfolio Steph Smout</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: darkred;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .topnav {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            height: 35px;
+            z-index: 50;
+            overflow: hidden;
+            background-color: rgba(255, 255, 255, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0;
+        }
+
+        .topnav .nav-left,
+        .topnav .nav-right {
+            display: flex;
+        }
+
+        .topnav .nav-left a,
+        .topnav .nav-right a {
+            color: black;
+            text-align: center;
+            padding: 7px 8px;
+            text-decoration: none;
+            font-size: 1.2vw;
+        }
+
+        .topnav .nav-left a:hover,
+        .topnav .nav-right a:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .topnav .nav-left a.active,
+        .topnav .nav-right a.active {
+            background-color: darkred;
+            color: white;
+        }
+
+        .topnav .name {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.5vw;
+            font-weight: bold;
+        }
+
+        .video-container {
+            position: relative;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: auto;
+        }
+		.AboutMeTotal div{
+			 transition: background 0.2s;
+
+		}
+		
+		.AboutMeTotal div:hover {
+	
+			background: rgba(150, 150, 150, 1);
+			
+		}
+		
+        .AboutMeSquare {
+            position: absolute;
+            top: 70%;
+            bottom: 4%;
+            left: 0;
+            right: 0;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+		
+
+        .AboutMeSquare p{
+            font-family: Arial;
+            text-align: center;
+            font-weight: bold;
+            color: black;
+			margin-left: 3%;
+			margin-right: 18%;
+        }
+
+        .projects {
+            background-color: black;
+        }
+
+        .projects a {
+            background-color: transparent;
+            float: left;
+            width: 100%;
+        }
+
+        .projects img {
+            width: 60%;
+            height: auto;
+            border: thick solid darkred;
+            transition: transform 0.2s;
+        }
+
+        .projects img:hover {
+            transform: scale(1.2);
+        }
+
+        .tag {
+            float: left;
+            clear: both;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .tag-cloud {
+            color: white;
+            padding: 8px 16px;
+            font-family: Arial;
+            font-size: 1.1vw;
+            border-radius: 40px;
+            background-color: #2196F3;
+            float: left;
+            z-index: 30;
+        }
+
+        .projects table {
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            height: 100%;
+        }
+
+        .w-3 {
+            width: 33.3%;
+            text-align: center;
+            padding-bottom: 40px;
+            padding-top: 60px;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            font-family: Arial;
+        }
+    </style>
+</head>
+<body>
+	
+    <script type="text/javascript">
+        window.onload = function () {
+            var videoSource = [
+                'HomePage/IntroVid(s)/IntroVid1.mp4',
+                'HomePage/IntroVid(s)/IntroVid2.mp4',
+                'HomePage/IntroVid(s)/IntroVid2.5.mp4',
+                'HomePage/IntroVid(s)/IntroVid3.mp4',
+                'HomePage/IntroVid(s)/IntroVid4.mp4',
+                'HomePage/IntroVid(s)/IntroVid5.mp4'
+            ];
+
+            var videoCount = videoSource.length;
+            var i = getRandomInt(videoCount);
+
+            function getRandomInt(max) {
+                return Math.floor(Math.random() * max);
+            }
+
+            var videoElement = document.getElementById("myVideo");
+            videoElement.src = videoSource[i];
+
+            // Prefetch the next videos
+            function prefetchVideos() {
+                for (var j = 0; j < videoSource.length; j++) {
+                    if (j !== i) {
+                        var link = document.createElement('link');
+                        link.rel = 'prefetch';
+                        link.href = videoSource[j];
+                        link.as = 'video';
+                        document.head.appendChild(link);
+                    }
+                }
+            }
+
+            prefetchVideos();
+
+            function videoPlay(videoNum) {
+                videoElement.src = videoSource[videoNum];
+                videoElement.load();
+                videoElement.play();
+            }
+
+            videoElement.addEventListener('ended', function () {
+                i++;
+                if (i === videoCount) {
+                    i = 0;
+                }
+                videoPlay(i);
+            }, false);
+        }
+    </script>
+	
+    <div class="topnav">
+        <div class="nav-left">
+            <a href="index.html#groupProjects">Group Projects</a>
+            <a href="index.html#soloProjects">Solo Projects</a>
+        </div>
+        <div class="name">Steph Smout</div>
+        <div class="nav-right">
+            <a href="HomePage/Contact/CV_StephSmout.html" target="_blank">CV</a>
+            <a href="index.html#aboutMe">About Me</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+    </div>
+
+    <div class="video-container">
+        <video id="myVideo" muted autoplay preload="metadata"></video>
+		
+	  <div class="AboutMeTotal">
+			<div id="aboutMe" class="AboutMeSquare">
+				<br>
+			<p style="font-size: 40px">About Me</p>
+            <p style="font-size: 25px">Hello! My name is Steph and I'm a (game) programmer in the learning. I'm currently studying game development in The Netherlands and have wanted to work in the game industry ever since I was young; I took Scratch courses and tried to self-study LUA when I was around 10, then learned HTML and CSS/JavaScript basics when I was around 12-13. I have high ambition and creativity, but also a fun and humorous side. ;P</p>
+				 <img src="SelfieImage.png" alt="Picture of me lol" height="300px" width="auto" style="border:thick solid black; margin-left: 83%; margin-top: -18%">
+        </div>
+	  </div>
+    </div>
+
+    <div id="groupProjects" class="projects">
+        <br><br>
+        <h1>- Group Projects -</h1>
+        <table>
+            <tr>
+                <td class="w-3">
+                    <a href="ProjectPages/WinterWonderRide/WinterWonderRide.html">
+                        <img src="HomePage/ImagesSchoolProjects/WinterWonderRideImg.png" alt="Winter Wonder Ride">
+                    </a>
+                    <div class="tag">
+                        <div class="tag-cloud">C#</div>
+                        <div class="tag-cloud">Unity3D</div>
+                        <div class="tag-cloud">Dev</div>
+                    </div>
+                </td>
+                <td class="w-3">
+                    <a href="ProjectPages/RunaStore/RunaStore.html">
+                        <img src="HomePage/ImagesSchoolProjects/RunastoreIMage.png" alt="">
+                    </a>
+					 <div class="tag">
+                        <div class="tag-cloud">C#</div>
+                        <div class="tag-cloud">Unity3D</div>
+                        <div class="tag-cloud">Dev</div>
+                    </div>
+				</td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="soloProjects" class="projects">
+        <br><br>
+        <h1>- Solo Projects -</h1>
+        <table>
+            <tr>
+                <td class="w-3">
+                    <a href="ProjectPages/LethalZombies/LethalZombies.html">
+                        <img src="HomePage/ImagesSchoolProjects/TowerDefenseImg.png" alt="Lethal Zombies">
+                    </a>
+                    <div class="tag">
+                        <div class="tag-cloud">C#</div>
+                        <div class="tag-cloud">Unity2D</div>
+                        <div class="tag-cloud">Dev</div>
+                        <div class="tag-cloud">Artist</div>
+                    </div>
+                </td>
+                <td class="w-3">
+                    <a href="ProjectPages/PixelPlatformer/PixelPlatformer.html">
+                        <img src="HomePage/ImagesSchoolProjects/PixelPlatformerPic.png" alt="Pixel Platformer">
+                    </a>
+                    <div class="tag">
+                        <div class="tag-cloud">C#</div>
+                        <div class="tag-cloud">Unity2D</div>
+                        <div class="tag-cloud">Dev</div>
+                        <div class="tag-cloud">Artist</div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+	<br><br>
+ <h1>- Contact -</h1>
+    <br id="contact"><br>
+    <a href="mailto:stephaniesmout14@gmail.com" target="_blank">
+        <img width="100px" style="margin-left: 20%;" src="HomePage/Contact/EmailImg.png" alt="Mail stephaniesmout14@gmail.com">
+    </a>
+	
+	<a href="https://github.com/DarkApricot" target="_blank">
+        <img width="100px" style="margin-left: 20%;" src="HomePage/Contact/GithubLogo.png" alt="Github Profile">
+    </a>
+	
+	<a href="https://www.linkedin.com/in/steph-smout-gamedeveloper/" target="_blank">
+        <img width="100px" style="margin-left: 20%;" src="HomePage/Contact/LinkedInLogo.png" alt="LinkedIn Profile">
+    </a>
+	
+	<br><br><br><br>
+</body>
+</html>

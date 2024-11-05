@@ -1,0 +1,548 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+	
+<script type="text/javascript">
+	window.onload = function(e) {
+var imageSource = new Array();
+imageSource[0] = 'CodeSnippet1.png';
+imageSource[1] = 'CodeSnippet2.png';
+imageSource[2] = 'CodeSnippet3.png';
+var imgCount = imageSource.length;
+var i = 0;
+	
+document.getElementById("imgSlider").setAttribute("src",imageSource[0]);
+		
+function nextImg()
+{
+	i ++;
+	if(i == imgCount){ i = 0; }
+	if(i == -1){i = imgCount; }
+	document.getElementById("imgSlider").setAttribute("src",imageSource[i]);
+}
+}
+</script>
+
+	
+<title>LethalZombies</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+	*{
+		padding:0;
+		margin:0;
+	}
+	html {
+	  scroll-behavior: smooth;
+	}
+
+	body{
+		background-color: darkred;
+		margin:0px; 
+		padding: 0px;
+	}
+	
+		
+	<style>
+		
+	.video-container {
+		position: fixed;
+	}
+	
+	.video-container video {
+		position: fixed;
+		top: -60px;
+		left: -160px;
+		width:120%;
+		
+		height:120%;
+		z-index: -50;
+	}
+	.background-rectangle {
+			position: relative;
+			
+			width: 60%;
+			height: 4200px;
+			background-color: rgb(255 255 255 / 70%);
+			left: 20%;
+		}
+		
+	.topnav {
+		position: fixed;
+		left:0;
+		right:0;
+		top:0;
+		height: 35px;
+		z-index: 50;
+	  overflow: hidden;
+	  background-color: rgb(255 255 255 / 40%);
+	}
+
+	.topnav a {
+	  color: black;
+	  text-align: center;
+	  padding: 7px 8px;
+	  text-decoration: none;
+	  font-family: Arial;
+	  font-size: 1.2vw;
+	}
+		
+	.topnav name {
+		 float: none;
+  		position: absolute;
+		top: 50%;
+  		left: 50%;
+  		transform: translate(-50%, -50%);
+		
+		text-align: center;
+		text-decoration: none;
+		padding: 14px 16px;
+		font-family: Arial;
+		font-size: 1.5vw;
+		font-weight: bold;
+	}
+
+	.topnav a:hover {
+	  background-color: white;
+	  color: black;
+	}
+
+	.topnav a.active {
+	  background-color: darkred;
+	  color: white;
+	}
+		
+		
+		.video-right video{
+			float: right;
+			padding-top: 0px;
+			padding-right: 20px;
+		}
+		
+		.video-left video {
+			float: left;
+			padding-top: 0px;
+			padding-left: 20px;
+		}
+		
+		.video-center video {
+			float: none;
+			padding-top: 0px;
+			padding-left: 20px;
+		}
+		
+		.background-rectangle h1 {
+			padding-top: 45px;
+			font-family: Arial; 
+			text-align: center;
+			font-weight: 3000;
+			font-size:60px;
+		}
+		.background-rectangle video {
+			display: block;
+			margin: 0 auto;
+			padding-top: 20px;
+			padding-bottom: 100px;
+		}
+		
+		.background-rectangle table {
+  		margin-left: auto; 
+  margin-right: auto;
+	  margin-bottom: auto;
+	  margin-top: auto;
+	  
+	  width: 100%;
+	  height: 100%;
+}
+		.w-3{
+		width:50%;
+		text-align: center;
+		font-family: Arial;
+		padding-left: 20px;
+		padding-right: 20px;
+			
+	}
+		.slideButton{
+			opacity: 1;
+		}
+		.slideButton button:hover{
+			opacity: 0;
+		}
+		
+	.wrapper {
+		align-content: center;
+		align-self: center;
+		width:80%;
+		padding-bottom:40px;
+		padding-top:40px;
+		padding-left: 20px;
+		padding-right: 20px;
+}
+
+.wrapper code {
+  display: block;
+  background: #3F3F3F;
+  color: white;
+  width: 100%;
+  max-height: 300px;
+  white-space: pre;
+  font-size: 15px;
+  line-height: 1.55;
+  padding: 1.55em;
+  border-radius: 12px;
+  overflow-x: scroll;
+text-align: left;
+}
+		
+        .githubRef img {
+            transition: transform 0.2s;
+        }
+
+        .githubRef img:hover {
+            transform: scale(1.2);
+        }
+		
+	</style>
+</head>
+
+<body>
+			<div class="topnav">
+  <a style="float:left" href="../../index.html#groupProjects">Group Projects</a>
+  <a style="float:left" href="../../index.html#soloProjects">Solo Projects</a>
+		<name>Steph Smout</name>
+  <a style="float:right" href="../../index.html#contact">Contact</a>
+  <a style="float:right" href="../../index.html#aboutMe">About Me</a>
+  <a style="float:right" href="../../HomePage/Contact/CV_StephSmout.html" target="_blank">CV</a>
+</div>
+	
+	<div class="video-container">
+	<video src="BackgroundVid.mkv" muted autoplay loop></video>
+	</div>
+	<div class="background-rectangle" style="border: thick solid  #932C00;">
+		<h1 style="margin-left: 90px; margin-right: -90px"> Lethal Zombies 
+		<a  class="githubRef" target="_blank" href="https://github.com/DarkApricot/LethalZombies">
+		<img style="margin-left: 50px; margin-bottom: -22px " height="80px" src="../../GithubLogo.png" alt="GitHub Logo">
+		</a></h1>
+	<video  src="IntroVidLethalZombies.mp4" width="840" height="504" controls></video>
+		
+<div style="width:100; text-align:center; font-family:Arial; margin-top:0; margin-top: -50px; margin-left: 30px; margin-right: 30px;">
+		<h2 style="font-size:30px;"> This is project Lethal Zombies!</h2>
+		<br>
+	<h2 style="font-size:20px;">For this project we had to make a tower defense, this was at the height of the Lethal Company popularity and I thought: "Hey, isn't Plants vs. Zombies technically a tower defense?" And thats how we got to this point.<br> In my version you play as the monsters, defending your home from the Human enemies that want to steal your items.</h2>
+		<br><br>
+		<h3> Timespan: 1 week <br> Art by: Me <br> Developers: Also me lmao
+		<br><br>
+		Original Plants vs. Zombies by PopCap Games. <br> Original Lethal Company and used art by Zeekerss.</h3>
+</div>
+		<br><br><br>
+<div class="video-right">
+<table>
+<tr>
+	<td class="w-3">
+		<h3 style="margin-top: -100px">Art<br><br>
+		 Here is a GIF collage of some of the animations I've made.<br> This includes the Nutcracker character shooting and dying. <br> + the Human enemies walking, attacking and also dying.</h3>
+	</td>
+	<td class="w-3">
+		<video width="500" height="300" src="VideoAnims.mp4" muted autoplay loop></video>	
+	</td>
+</tr>
+</table>
+</div>
+		
+	<div>
+	<h2 class="w-3" style="width: 100%; margin-bottom: -30px; margin-left: -20px"> Placing Monsters </h2>
+			<div class="wrapper" style="width: 90%">
+				
+				<pre> <code> public void PlaceMonster(Transform _newParent, Vector3 _newPosition)
+{
+    // Set the position and parent transform of the monster
+    transform.position = _newPosition;
+    transform.parent = _newParent;
+
+    // Set the monster's layer and player detection mask
+    playerLayerMask = LayerMask.GetMask(&quot;Player&quot;);
+    gameObject.layer = monsterLayerMask;
+
+    // Instantiate a new HP bar and set its position relative to the monster
+    GameObject _hpBar = Instantiate(hpBarPrefab, GameObject.Find(&quot;HPCanvas/Mon_HealthBars&quot;).transform);
+    _hpBar.transform.position = new Vector2(transform.position.x - 0.2f, transform.position.y + 0.5f); // Update HP bar position
+    associatedHPBar = _hpBar.GetComponent&lt;Slider&gt;();
+    
+    // Update the HP bar to reflect the monster's current health
+    UpdateHPBar(Health);
+}
+
+private void OnEnable()
+{
+    // Enable the sprite renderer for the monster's first child object
+    transform.GetChild(0).GetComponent&lt;SpriteRenderer&gt;().enabled = true;
+
+    // Ensure the monster is placed on a valid tile
+    while (!CheckIfTileHasMonster())
+    {
+        // Check if the monster is not touching a wall (outside of the map)
+        if (!CheckIfTouchWall()) 
+        {
+            // Set the position to the middle of the map
+            transform.position = new Vector3(0.5f, -0.5f, 0);
+            
+            // Continue checking if the middle tile already has a monster
+            while (!CheckIfTileHasMonster())
+            {
+                // Find a new spawn position if needed
+                NewSpawnPosition();
+            }
+
+            break;
+        }
+        else
+        {
+            // Find a new spawn position if the monster is touching a wall
+            NewSpawnPosition();
+        }
+    }
+}				</code> </pre> </div>
+		</div>
+				
+<div>
+		<div class="video-left">
+<table>
+<tr>
+	<td class="w-3">
+		 <video style="margin-left: -20px; margin-top: -50px" width="450" height="100%" src="PlacingMonsters.mp4" muted autoplay loop ></video>
+	</td>
+	
+	
+	<td class="w-3" >
+	<h3 style="	margin-left: -30px; margin-top: -100px"> This code snippet is from a function of placing a monster. It works with any type of monster, but due to lack of time I only made the Nutcracker. </h3>
+	</td>
+</tr>
+</table>
+</div>
+	
+	<div>
+	<h2 class="w-3" style="width: 100%; margin-bottom: -30px; margin-left: -20px"> (Saving) Player Stats</h2>
+			<div class="wrapper" style="width: 90%">
+				
+			<pre>	<code style= "max-height: 450px;">using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TMPro;
+
+public class Stats
+{
+    public static float Loot, BaseHP = 100, PlayersLeft, Wave = 1, PlayersKilled, MonstersLost, DamageGiven, DamageReceived, LootWon = Loot;
+}
+
+public class UIStatsScript : MonoBehaviour
+{
+    private static TextMeshProUGUI[] texts;
+
+    private void Awake()
+    {
+        // Get all TextMeshProUGUI components from the children
+        texts = GetComponentsInChildren&lt;TextMeshProUGUI&gt;();
+
+        // Reset stats and update the UI to reflect initial values
+        ResetStats();
+        UpdateUI();
+    }
+
+    /// &lt;summary&gt;
+    /// Updates a stat with the given input.
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;_whichStat&quot;&gt;&lt;/param&gt;
+    /// &lt;param name=&quot;_changeWith&quot;&gt;&lt;/param&gt;
+    public static void UpdateStat(ref float _whichStat, float _changeWith)
+    {
+        // Update the stat value
+        _whichStat += _changeWith;
+
+        // Refresh the UI with the updated stats
+        UpdateUI();
+
+        // If BaseHP has reached 0, trigger the "You Died" function in the UIManagerScript
+        if (_whichStat == Stats.BaseHP &amp;&amp; Stats.BaseHP &lt;= 0)
+        {
+            FindObjectOfType&lt;UIManagerScript&gt;().YouDied();
+        }
+
+        // If all players have left, trigger the wave completion and increment the wave count
+        if (_whichStat == Stats.PlayersLeft &amp;&amp; Stats.PlayersLeft == 0)
+        {
+            FindObjectOfType&lt;WaveManagerScript&gt;().WaveComplete();
+            UpdateStat(ref Stats.Wave, +1);
+        }
+    }
+
+    /// &lt;summary&gt;
+    /// Corrects UI visuals with the current stats.
+    /// &lt;/summary&gt;
+    public static void UpdateUI()
+    {
+        // Save the current stats into an array for easier UI updating
+        float[] _savedStats = { Stats.Loot, Stats.BaseHP, Stats.PlayersLeft, Stats.Wave };
+
+        // Loop through saved stats and update the corresponding UI text elements
+        for (int i = 0; i &lt; _savedStats.Length; i++)
+        {
+            texts[i + 1].text = _savedStats[i].ToString();
+        }
+    }
+
+    private void ResetStats()
+    {
+        // Reset all the stats to their default values
+        Stats.Loot = 0;
+        Stats.BaseHP = 100;
+        Stats.PlayersLeft = 0;
+        Stats.Wave = 1;
+        Stats.PlayersKilled = 0;
+        Stats.MonstersLost = 0;
+        Stats.DamageGiven = 0;
+        Stats.DamageReceived = 0;
+        Stats.LootWon = 0;
+
+        // Resume the game's time scale to normal
+        Time.timeScale = 1;
+    }
+}</code> </pre>
+				
+				<br><br>
+<h2 class="w-3" style="width: 100%; margin-left: -20px"> (Saving) Pre-made Monster Stats </h2> <br>			
+<pre> <code>using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MonsterInfoScript : MonoBehaviour
+{
+    [Header(&quot;Monster Info / Stats&quot;)]
+    public string[] MonsterInfo = { &quot;Name&quot;, &quot;Description&quot;, &quot;Speed&quot;, &quot;Damage&quot;, &quot;Range&quot;, &quot;Price&quot; };
+    public Sprite MonsterImage;
+
+    private StoreScript updaterScript;
+
+    private void Start()
+    {
+        updaterScript = FindObjectOfType&lt;StoreScript&gt;();
+    }
+
+    /// &lt;summary&gt;
+    /// Used in UI Store buttons. Updates store's Monster Info panel.
+    /// &lt;/summary&gt;
+    public void GetScript()
+    {
+        // Assigns this MonsterInfoScript instance to the SelectedMonsterScript in StoreScript
+        updaterScript.SelectedMonsterScript = this;
+    }
+}
+
+</code> </pre>
+		</div>
+		</div>
+	<br><br><br><br>
+	<div>
+	<h2 class="w-3" style="width: 100%; margin-bottom: -30px; margin-left: -20px"> Store Script (Setting monster info / buying)</h2>
+			<div class="wrapper" style="width: 90%">
+				
+				<pre> <code>void Start()
+{
+    // Get all Image components and TextMeshProUGUI components from the monster info panel's children
+    monsterImage = SF_monsterInfoPanel.GetComponentsInChildren&lt;Image&gt;();
+    monsterInfoTexts = SF_monsterInfoPanel.GetComponentsInChildren&lt;TextMeshProUGUI&gt;();
+}
+
+public void GetMonsterInfoButtonClicked()
+{
+    // Check if there is existing monster info, if it matches the currently selected monster,
+    // and if the panel is active, toggle the panel off
+    if (takenMonsterInfo != null &amp;&amp; takenMonsterInfo[0] == SelectedMonsterScript.MonsterInfo[0] &amp;&amp; SF_monsterInfoPanel.activeInHierarchy)
+    {
+        SF_monsterInfoPanel.SetActive(false); // Hide the monster info panel
+    }
+    else
+    {
+        // If the selected monster is new, update the info panel with new monster data
+        UpdateInfoPanel();
+    }
+
+    // Fill the panel with the selected monster's info
+    FillMonsterInfo();
+}
+
+private void UpdateInfoPanel()
+{
+    // Store the selected monster's information and image
+    takenMonsterInfo = SelectedMonsterScript.MonsterInfo;
+    takenMonsterImage = SelectedMonsterScript.MonsterImage;
+
+    // Activate the monster info panel to display new data
+    SF_monsterInfoPanel.SetActive(true);
+}
+
+private void FillMonsterInfo()
+{
+    // Loop through each piece of the monster's info and update the UI text components
+    for (int i = 0; i &lt; takenMonsterInfo.Length; i++)
+    {
+        monsterInfoTexts[i].text = takenMonsterInfo[i]; // Set each text field with the corresponding monster info
+    }
+
+    // Set the monster's image in the UI
+    monsterImage[1].sprite = takenMonsterImage;
+}
+
+public void BuyMonster()
+{
+    // Convert the price (stored as a string) to a float
+    float _Price = float.Parse(takenMonsterInfo[5]);
+
+    // Check if the player has enough Loot to purchase the monster
+    if (Stats.Loot &gt;= _Price)
+    {
+        // Change the UI screen to the "PlayUI" after purchase
+        FindAnyObjectByType&lt;UIManagerScript&gt;().ChangeUIScreen(&quot;PlayUI&quot;);
+
+        // Deduct the monster's price from the player's loot
+        UIStatsScript.UpdateStat(ref Stats.Loot, -_Price);
+
+        // Load the monster prefab based on its name
+        GameObject _enemyPrefab = Resources.Load&lt;GameObject&gt;(&quot;Prefabs/&quot; + takenMonsterInfo[0]);
+
+        // Enable the PlaceMonsterScript to allow placing the monster
+        FindObjectOfType&lt;PlaceMonsterScript&gt;().enabled = true;
+
+        // Instantiate the monster at the specified location
+        Instantiate(_enemyPrefab, SF_placeMonster);
+    }
+}
+</code> </pre> </div>
+		</div>
+				
+<div>
+		<div class="video-left">
+<table>
+<tr>
+	<td class="w-3">
+		 <video style="margin-left: -20px; margin-top: -50px" width="600" height="100%" src="StoreSnippetVid.mp4" muted autoplay loop controls ></video>
+	</td>
+	
+	
+	<td class="w-3" >
+	<h3 style="	margin-left: -30px; margin-top: -100px"> This script is of the store. It regulates the stats of any monster that's buyable (currently only the Nut-cracker) and automatically sets all info.</h3>
+	</td>
+</tr>
+</table>
+	</div>
+	</div>
+	
+	
+	</div>
+	</div>
+</body>
+</html>

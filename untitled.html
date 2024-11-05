@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<style>
+#myDIV {
+  height: 250px;
+  width: 250px;
+  overflow: auto;
+}
+
+#content {
+  height: 800px;
+  width: 2000px;
+  background-color: coral;
+}
+</style>
+
+<body>
+	
+<div id="myDIV" onscroll="myFunction()">
+  <div id="content">Scroll me!</div>
+</div>
+
+<p id="demo"></p>
+<p id="demo2"></p>
+
+<script>
+function myFunction() {
+  const element = document.getElementById("myDIV");
+  let x = element.scrollLeft;
+  let y = element.scrollTop;
+  document.getElementById ("demo").innerHTML = "Horizontally: " + x.toFixed() + "<br>Vertically aa: " + y.toFixed();
+	
+	if(y.toFixed() >= 300)
+		{
+			 document.getElementById ("demo2").innerHTML = "Horizontally: " + x.toFixed() + "<br>Vertically aa: " + y.toFixed();
+		}
+	
+}
+</script>
+
+</body>
+</html>
