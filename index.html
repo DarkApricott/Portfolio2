@@ -15,6 +15,7 @@
             scroll-behavior: smooth;
         }
 
+		
         body {
             background-color: darkred;
             margin: 0;
@@ -27,7 +28,8 @@
             left: 0;
             right: 0;
             top: 0;
-            height: 35px;
+            height: 3vw;
+			min-height: 20px;
             z-index: 50;
             overflow: hidden;
             background-color: rgba(255, 255, 255, 0.4);
@@ -48,7 +50,8 @@
             text-align: center;
             padding: 7px 8px;
             text-decoration: none;
-            font-size: 1.2vw;
+            font-size:calc(5px + 1vw);
+			
         }
 
         .topnav .nav-left a:hover,
@@ -67,7 +70,7 @@
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            font-size: 1.5vw;
+			font-size:calc(7px + 1vw);
             font-weight: bold;
         }
 
@@ -79,23 +82,24 @@
             width: 100%;
             height: auto;
         }
+		
 		.AboutMeTotal div{
 			 transition: background 0.2s;
-
 		}
 		
 		.AboutMeTotal div:hover {
-	
-			background: rgba(150, 150, 150, 1);
+			/* background: rgba(150, 150, 150, 1); */
 			
 		}
 		
         .AboutMeSquare {
             position: absolute;
-            top: 70%;
-            bottom: 4%;
+			display: flex;
+            top: 40vw;
+            bottom: 2vw;
             left: 0;
             right: 0;
+			width: 100%;
             background-color: rgba(255, 255, 255, 0.5);
         }
 		
@@ -140,10 +144,10 @@
 
         .tag-cloud {
             color: white;
-            padding: 8px 16px;
+            padding: 1vw 2vw;
             font-family: Arial;
-            font-size: 1.1vw;
-            border-radius: 40px;
+            font-size: 1.5vw;
+            border-radius: 40vw;
             background-color: #2196F3;
             float: left;
             z-index: 30;
@@ -159,15 +163,21 @@
         .w-3 {
             width: 33.3%;
             text-align: center;
-            padding-bottom: 40px;
-            padding-top: 60px;
+            padding-bottom: 2vw;
+            padding-top: 2vw;
         }
 
         h1 {
             color: white;
             text-align: center;
             font-family: Arial;
+			font-size: 3.5vw;
         }
+		
+		.contact img {
+			width: 10vw;
+			margin-left: 17.5%; 
+		}
     </style>
 </head>
 <body>
@@ -242,13 +252,22 @@
 		
 	  <div class="AboutMeTotal">
 			<div id="aboutMe" class="AboutMeSquare">
-				<br>
-			<p style="font-size: 40px">About Me</p>
-            <p style="font-size: 25px">Hello! My name is Steph and I'm a (game) programmer in the learning. I'm currently studying game development in The Netherlands and have wanted to work in the game industry ever since I was young; I took Scratch courses and tried to self-study LUA when I was around 10, then learned HTML and CSS/JavaScript basics when I was around 12-13. I have high ambition and creativity, but also a fun and humorous side. ;P</p>
-				 <img src="SelfieImage.png" alt="Picture of me lol" height="300px" width="auto" style="border:thick solid black; margin-left: 83%; margin-top: -18%">
-        </div>
+        <table style="margin-top: -5vw">
+            <tr><td> <p style="font-size:3vw; margin-right:2vw; margin-top: 5vw">About Me</p> </td></tr>
+			<tr>
+                <td>
+					<p style="font-size: 1.5vw; margin-right:1vw; margin-top: -12vw">Hello! My name is Steph and I'm a (game) programmer in the learning. I'm currently studying game development in The Netherlands and have wanted to "make games" ever since I was young; <br> I took Scratch courses and tried to self-study LUA when I was around 10, then learned HTML and CSS/JavaScript basics when I was around 12-13. I have high ambition and creativity, but also a fun and humorous side. ;P</p>
+				</td>
+				
+				<td style="height: 25vw; top: -50vw">
+				 <img src="SelfieImage.png" alt="Picture of me lol" style="border:thick solid black; height: inherit; width: auto; margin-top: -25vw">
+				</td>
+          </tr>
+        </table>
+				
 	  </div>
     </div>
+	</div>
 
     <div id="groupProjects" class="projects">
         <br><br>
@@ -309,20 +328,23 @@
             </tr>
         </table>
     </div>
-	<br><br>
+	
+	<br>
+	<div class="contact">
  <h1>- Contact -</h1>
-    <br id="contact"><br>
+    <br id="contact">
     <a href="mailto:stephaniesmout14@gmail.com" target="_blank">
-        <img width="100px" style="margin-left: 20%;" src="HomePage/Contact/EmailImg.png" alt="Mail stephaniesmout14@gmail.com">
+        <img src="HomePage/Contact/EmailImg.png" alt="Mail stephaniesmout14@gmail.com">
     </a>
 	
 	<a href="https://github.com/DarkApricot" target="_blank">
-        <img width="100px" style="margin-left: 20%;" src="HomePage/Contact/GithubLogo.png" alt="Github Profile">
+        <img src="HomePage/Contact/GithubLogo.png" alt="Github Profile">
     </a>
 	
 	<a href="https://www.linkedin.com/in/steph-smout-gamedeveloper/" target="_blank">
-        <img width="100px" style="margin-left: 20%;" src="HomePage/Contact/LinkedInLogo.png" alt="LinkedIn Profile">
+        <img src="HomePage/Contact/LinkedInLogo.png" alt="LinkedIn Profile">
     </a>
+	</div>
 	
 	<br><br><br><br>
 </body>

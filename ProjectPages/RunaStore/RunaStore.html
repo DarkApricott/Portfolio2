@@ -23,64 +23,73 @@
             background-color: darkred;
             margin: 0;
             padding: 0;
+			font-family: Arial, sans-serif;
         }
-
-        .topnav {
+		
+ 		.background-image-wrapper {
             position: fixed;
+            width: 100%;
+            height: 100%;
             top: 0;
             left: 0;
+            overflow: hidden;
+            z-index: -50;
+        }
+
+        .background-image-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 55% center; /* small offset to the right */
+        }
+
+       .topnav {
+            position: fixed;
+            left: 0;
             right: 0;
-            height: 35px;
+            top: 0;
+            height: 3vw;
+            min-height: 20px;
             z-index: 50;
+            background-color: rgba(255, 255, 255, 0.4);
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background-color: rgba(255, 255, 255, 0.4);
         }
 
-        .topnav .left-buttons,
-        .topnav .right-buttons {
+        .topnav .nav-left,
+        .topnav .nav-right {
             display: flex;
         }
 
-        .topnav .left-buttons a,
-        .topnav .right-buttons a {
+        .topnav a {
             color: black;
             text-align: center;
             padding: 7px 8px;
             text-decoration: none;
-            font-family: Arial, sans-serif;
-            font-size: 1.2vw;
-        }
-
-        .topnav .left-buttons a {
-            margin-right: 0;
-        }
-
-        .topnav .right-buttons a {
-            margin-left: 0;
-        }
-
-        .topnav .name {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            text-align: center;
-            padding: 14px 16px;
-            font-family: Arial, sans-serif;
-            font-size: 1.5vw;
-            font-weight: bold;
+            font-size: calc(5px + 1vw);
         }
 
         .topnav a:hover {
             background-color: white;
-            color: black;
         }
 
         .topnav a.active {
             background-color: darkred;
             color: white;
         }
+
+        .topnav .name {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: calc(7px + 1vw);
+            font-weight: bold;
+        }
+
 
         .video-container {
             position: fixed;
@@ -109,11 +118,9 @@
         }
 
         .background-rectangle h1 {
-            padding-top: 45px;
-            font-family: Arial, sans-serif;
             text-align: center;
             font-weight: bold;
-            font-size: 60px;
+            font-size: calc(20px + 2vw);
         }
 
         .background-rectangle video{
@@ -125,13 +132,34 @@
 		
 		.background-rectangle iframe {
             display: block;
-            margin: 0 auto;
-            padding-top: 20px;
-            padding-bottom: 100px;
-			width: 890px;
-			height: 500px;
+            margin: 0 0;
+            padding-top: 2vw;
+			padding-bottom: 2vw;
+        }
+		
+		
+ 		.githubRef img {
+            transition: transform 0.2s;
         }
 
+        .githubRef img:hover {
+            transform: scale(1.2);
+        }
+		
+		
+		 .background-rectangle table {
+            margin: 0 auto;
+            width: 100%;
+        }
+		
+        .w-3 {
+            width: 50%;
+            text-align: center;
+            padding-left: 2vw;
+			padding-right: 2vw;
+        }
+		
+		
         .video-right, .video-left, .video-center {
             padding-top: 0;
         }
@@ -150,106 +178,105 @@
             float: none;
             padding-left: 20px;
         }
-
-        .background-rectangle table {
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        .w-3 {
-            width: 50%;
-            text-align: center;
-            font-family: Arial, sans-serif;
-            padding-left: 20px;
-			padding-right: 20px;
-        }
-
+		
+		
+		h2 {
+			 font-size: calc(13px + 2vw);
+		}
+		
         h3 {
-            font-family: Arial, sans-serif;
-            font-size: 16px;
+            font-size: calc(13px + 0.5vw);
         }
 		
-			.wrapper {
-		align-content: center;
-		align-self: center;
-		width:80%;
-		padding-bottom:40px;
-		padding-left: 20px;
-		padding-right: 20px;
-}
+		
+		.wrapper {
+		  align-content: center;
+		  align-self: center;
+			
+		  width:80%;
+			
+		  padding-bottom:40px;
+		  padding-left: 20px;
+		  padding-right: 20px;
+		}
 
-.wrapper code {
-  display: block;
-  background: #3F3F3F;
-  color: white;
-  width: 100%;
-  max-height: 300px;
-  white-space: pre;
-  font-size: 15px;
-  line-height: 1.55;
-  padding: 1.55em;
-  border-radius: 12px;
-  overflow-x: scroll;
-text-align: left;
-}
-		  .githubRef img {
-            transition: transform 0.2s;
-        }
-
-        .githubRef img:hover {
-            transform: scale(1.2);
-        }
+		.wrapper code {
+		  display: block;
+		  background: #3F3F3F;
+		  color: white;
+			
+		  width: 100%;
+		  max-height: 300px;
+			
+		  white-space: pre;
+		  line-height: 1.55;
+		  text-align: left;
+		  
+		  font-size: 15px;
+		  
+		  padding: 1.55em;
+		  border-radius: 12px;
+			
+		  overflow-x: scroll;
+		}		
     </style>
 </head>
 
 <body>
-    <div class="topnav">
-        <div class="left-buttons">
-            <a href="../../index.html#groupProjects">Group Projects</a>
-            <a href="../../index.html#soloProjects">Solo Projects</a>
-        </div>
-        <div class="name">Steph Smout</div>
-        <div class="right-buttons">
-            <a href="../../HomePage/Contact/CV_StephSmout.html" target="_blank">CV</a>
-            <a href="../../index.html#aboutMe">About Me</a>
-            <a href="../../index.html#contact">Contact</a>
-        </div>
+  <div class="topnav">
+    <div class="nav-left">
+        <a href="../../index.html#groupProjects">Group Projects</a>
+        <a href="../../index.html#personalProjects">Personal Projects</a>
     </div>
+    <div class="name">Steph Smout</div>
+    <div class="nav-right">
+        <a href="../../HomePage/Contact/CV_StephSmout.html" target="_blank">CV</a>
+        <a href="../../index.html#aboutMe">About Me</a>
+        <a href="../../index.html#contact">Contact</a>
+    </div>
+</div>
 
-    <div class="video-container">
-		<img width="100%" src="RunaStoerBackground.png" alt="">
+	
+    <div class="background-image-wrapper">
+		<img src="RunaStoerBackground.png" alt="">
     </div>
 
     <div class="background-rectangle">
-        <h1 style="margin-left:130px">Run'A Store 
-		<a class="githubRef" target="_blank" href="https://github.com/DarkApricot/RunaStore">
-		<img style="margin-bottom: -22px " height="80px" src="../../GithubLogo.png" alt="GitHub Logo">
-		</a>
-		</h1>
-        <iframe src="https://www.youtube.com/embed/vfH9kPEfKAg?autoplay=1&mute=1&rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
 		
-<div style="width:100; text-align:center; font-family:Arial; margin-top:0; margin-top: -50px;  margin-left: 30px; margin-right: 30px;">
-		<h2 style="font-size:30px;"> This is project Run'A Store!</h2>
-		<br>
-	<h2 style="font-size:20px;">In here I'll write some info about how the project went! </h2>
-		<br><br>
-		<h3> My contribution: All UI - Boxes / Shelves filling system - The tutorial <br> Timespan: 6 weeks
+        <h1 style="margin-left: 4vw;">Run'A Store			
+			<a class="githubRef" target="_blank" href="https://github.com/DarkApricot/RunaStore">
+            	<img style="margin-left: 1vw; margin-bottom: -2.5vw; width:15vw; height:auto"
+                 src="../../GithubLogo.png" alt="GitHub Logo">
+        	</a>
+		</h1>
+        
+		<iframe style="width: 60vw; height: 34vw;" src="https://www.youtube.com/embed/vfH9kPEfKAg?autoplay=1&mute=1&rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
+		
+	<div style="width:100; text-align:center;">
+		<h2 > This is project Run'A Store!</h2><br>
+	
+		<h2 style="font-size: calc(13px + 0.5vw)">In here I'll write some info about how the project went! </h2> <br><br>
+	
+		<h3> My contribution: Entire UI - Boxes / Shelves filling system - The tutorial <br> Timespan: 6 weeks
 		<br><br>
 		3D Models by: Daphne Koelewijn, Nova Schuit<br>
-	2D art by: Mynke Bohane-Vos<br>
-	Developers: Kasper van der Horst, Sander Meijer and me :D <br><br>
-			<a href="https://darkapricott.itch.io/run-a-store" target="_blank">Play the game yourself on Itch.IO!</a></h3>
-</div>
-		<br><br><br>
+		2D art by: Mynke Bohane-Vos<br>
+		Developers: Kasper van der Horst, Sander Meijer and me :D <br><br>
+			
+		<a href="https://darkapricott.itch.io/run-a-store" target="_blank">Play the game yourself on Itch.IO!</a></h3>
+	</div> <br><br><br>
+		
+		
+		
         <div class="video-right">
             <table>
                 <tr>
                     <td class="w-3">
-						<h2 style="margin-right: -120px; margin-top: -80px;"> Tutorial</h2> <br><br>
-                        <h3 style=" margin-left: 120px;">In this short video I followed the tutorial. <br><br> It shows all menus and most of the features in the game.</h3>
+						<h2 style="margin-right: -7vw; margin-top: -8vw"> Tutorial</h2> <br><br>
+                        <h3 style=" margin-left: 7vw;">In this short video I followed the tutorial. <br><br> It shows all menus and most of the features in the game.</h3>
                     </td>
                     <td>
-                        <video width="500" height="100%" src="RunaStoreTutorialVid.mp4" controls></video>
+                        <video width="500vw" height="500vw" src="RunaStoreTutorialVid.mp4" controls></video>
                     </td>
                 </tr>
             </table>

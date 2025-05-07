@@ -18,33 +18,32 @@
 
         body {
             background-color: darkred;
-            margin: 0;
-            padding: 0;
             font-family: Arial, sans-serif;
         }
 
-        .video-container {
+        .background-video-wrapper {
             position: fixed;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
+            top: 0;
+            left: 0;
             overflow: hidden;
             z-index: -50;
         }
 
-        .video-container video {
+        .background-video-wrapper video {
             position: absolute;
-            top: -60px;
-            left: -160px;
-            width: 120%;
-            height: 120%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 55% center; /* small offset to the right */
         }
 
         .background-rectangle {
             position: relative;
             width: 60%;
-            height: 2800px;
             background-color: rgba(255, 255, 255, 0.5);
             left: 20%;
             border: thick solid #A58626;
@@ -56,14 +55,13 @@
             left: 0;
             right: 0;
             top: 0;
-            height: 35px;
+            height: 3vw;
+            min-height: 20px;
             z-index: 50;
-            overflow: hidden;
             background-color: rgba(255, 255, 255, 0.4);
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0;
         }
 
         .topnav .nav-left,
@@ -71,23 +69,19 @@
             display: flex;
         }
 
-        .topnav .nav-left a,
-        .topnav .nav-right a {
+        .topnav a {
             color: black;
             text-align: center;
             padding: 7px 8px;
             text-decoration: none;
-            font-size: 1.2vw;
+            font-size: calc(5px + 1vw);
         }
 
-        .topnav .nav-left a:hover,
-        .topnav .nav-right a:hover {
+        .topnav a:hover {
             background-color: white;
-            color: black;
         }
 
-        .topnav .nav-left a.active,
-        .topnav .nav-right a.active {
+        .topnav a.active {
             background-color: darkred;
             color: white;
         }
@@ -96,43 +90,23 @@
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            font-size: 1.5vw;
+            font-size: calc(7px + 1vw);
             font-weight: bold;
         }
 
-        .video-right,
-        .video-left {
-            float: left;
-            padding: 0 20px;
+        .githubRef img {
+            transition: transform 0.2s;
         }
 
-        .video-center {
-            clear: both;
-            padding: 0 20px;
-        }
-
-        .video-right video,
-        .video-left video {
-            display: block;
-            margin: 0 auto;
-        }
-
-        .video-right img,
-        .video-left img {
-            display: block;
-            margin: 0 auto;
+        .githubRef img:hover {
+            transform: scale(1.2);
         }
 
         .background-rectangle h1 {
-            padding-top: 45px;
+            padding-top: 4vw;
             text-align: center;
             font-weight: 300;
-            font-size: 60px;
-        }
-
-        .background-rectangle video {
-            display: block;
-            margin: 20px auto;
+            font-size: calc(5px + 3vw);
         }
 
         .background-rectangle h2,
@@ -142,28 +116,41 @@
             margin: 10px 0;
         }
 
-        .background-rectangle table {
-            margin: auto;
-            width: 100%;
+        .content-row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 2vw;
+            margin-bottom: 2em;
+            flex-wrap: wrap;
         }
 
-        .w-3 {
-            width: 50%;
+        .content-row .text,
+        .content-row .media {
+            flex: 1 1 45%;
             text-align: center;
-            padding: 10px 20px;
-        }
-		
-		     .githubRef img {
-            transition: transform 0.2s;
         }
 
-        .githubRef img:hover {
-            transform: scale(1.2);
+        .content-row .media video,
+        .content-row .media img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            .content-row {
+                flex-direction: column;
+            }
+
+            .content-row .text,
+            .content-row .media {
+                flex: 1 1 100%;
+            }
         }
     </style>
-    
+
     <script type="text/javascript">
-        window.onload = function() {
+        window.onload = function () {
             var videoSource = [
                 'PromoVid1.mp4',
                 'PromoVid2.mp4',
@@ -171,7 +158,7 @@
             ];
             var videoCount = videoSource.length;
             var i = 0;
-            
+
             var videoElement = document.getElementById("myVideo");
             videoElement.setAttribute("src", videoSource[0]);
 
@@ -180,121 +167,97 @@
                 videoElement.load();
                 videoElement.play();
             }
-            
-            function myHandler() {
-                i++;
-                if (i === videoCount) {
-                    i = 0;
-                }
-                videoPlay(i);
-            }
 
-            videoElement.addEventListener('ended', myHandler, false);
+            videoElement.addEventListener('ended', function () {
+                i = (i + 1) % videoCount;
+                videoPlay(i);
+            });
         }
     </script>
 </head>
 <body>
-    <div class="topnav">
-        <div class="nav-left">
-            <a href="../../index.html#groupProjects">Group Projects</a>
-            <a href="../../index.html#personalProjects">Personal Projects</a>
-        </div>
-        <div class="name">Steph Smout</div>
-        <div class="nav-right">
-			
-            <a href="../../HomePage/Contact/CV_StephSmout.html" target="_blank">CV</a>
-            <a href="../../index.html#aboutMe">About Me</a>
-			<a href="../../index.html#contact">Contact</a>
-        </div>
+<div class="topnav">
+    <div class="nav-left">
+        <a href="../../index.html#groupProjects">Group Projects</a>
+        <a href="../../index.html#personalProjects">Personal Projects</a>
     </div>
-    
-    <div class="video-container">
-        <video src="WinterWonderRideBackground.mp4" muted autoplay loop></video>
+    <div class="name">Steph Smout</div>
+    <div class="nav-right">
+        <a href="../../HomePage/Contact/CV_StephSmout.html" target="_blank">CV</a>
+        <a href="../../index.html#aboutMe">About Me</a>
+        <a href="../../index.html#contact">Contact</a>
     </div>
-    
-    <div class="background-rectangle">
-        <h1 style="margin-left: 50px; margin-right: -50px">Winter Wonder Ride! <a  class="githubRef" target="_blank" href="https://github.com/MaxGeurts/NightRacer">
-		<img style="margin-left: 10px; margin-bottom: -22px " height="80px" src="../../GithubLogo.png" alt="GitHub Logo">
-		</a></h1>
-        <video id="myVideo" width="840" height="504" controls></video>
-        
-        <h2>This is project Winter Wonder Ride!</h2>
-        <h3>Artists: Daniel Taki, Patrick van der Steen, Randy van Wanrooy, Tristan Maaskant
-			<br>Devs: Max Geurts, Me
-			<br><br>In this project I made the menu's / UI, obstacles and general finetuning.</h3>
-        <h4>(For more in depth credits, go to the end of the 3rd video at the top.)</h4>
+</div>
 
-        <div class="video-right">
-            <table>
-                <tr>
-                    <td class="w-3">
-                        <h3>Sprint 1! - Alpha</h3>
-                        <h3>The sprint was chaotic but productive. We established the menu and general layout.<br>Max, the other developer, started the car movement, and we implemented a checkpoint system. <br><br> The car movement is still unstable, making it hard to drive, with players constantly hitting obstacles. 😂<br>The art had a solid foundation, and the map blockout was nearly complete.</h3>
-                    </td>
-                    <td>
-                        <video width="500" height="300" src="Sprint1.mp4" controls></video>
-                    </td>
-                </tr>
-            </table>
+<div class="background-video-wrapper">
+    <video src="WinterWonderRideBackground.mp4" muted autoplay loop></video>
+</div>
+
+<div class="background-rectangle">
+    <h1 style="margin-left: 2vw; margin-top: -2vw">Winter Wonder Ride!
+        <a class="githubRef" target="_blank" href="https://github.com/MaxGeurts/NightRacer">
+            <img style="margin-left: 1vw; margin-bottom: -2.5vw; width:15vw; height:auto"
+                 src="../../GithubLogo.png" alt="GitHub Logo">
+        </a>
+    </h1>
+    <video id="myVideo" width="100%" controls></video>
+
+    <h2>This is project Winter Wonder Ride!</h2>
+    <h3>Artists: Daniel Taki, Patrick van der Steen, Randy van Wanrooy, Tristan Maaskant<br>
+        Devs: Max Geurts, Me<br><br>
+        In this project I made the menu's / UI, obstacles and general finetuning.</h3>
+    <h4>(For more in depth credits, go to the end of the 3rd video at the top.)</h4>
+
+    <!-- Sprint Sections -->
+    <div class="content-row">
+        <div class="text">
+            <h3>Sprint 1! - Alpha</h3>
+            <h3>The sprint was chaotic but productive. We established the menu and general layout.<br>Max, the other developer, started the car movement, and we implemented a checkpoint system. <br><br> The car movement is still unstable, making it hard to drive, with players constantly hitting obstacles. 😂<br>The art had a solid foundation, and the map blockout was nearly complete.</h3>
         </div>
-
-        <div class="video-left">
-            <table>
-                <tr>
-                    <td>
-                        <video width="500" height="300" src="Sprint2.mp4" controls></video>
-                    </td>
-                    <td class="w-3">
-                        <h3>Sprint 2! - Alpha</h3>
-                        <h3>The 2nd sprint was even more chaotic, and we fell behind schedule. The car was more drivable but still hard to control, bouncing and sliding around.<br><br> I created icicle obstacles that caused players to get stuck in the cave for a while. The artists started texturing models, and the menu received minor updates.</h3>
-                    </td>
-                </tr>
-            </table>
-        </div>
-
-        <div class="video-right">
-            <table>
-                <tr>
-                    <td class="w-3">
-                        <h3>Sprint 3! - Beta</h3>
-                        <h3>The third sprint was intense. The artists remade the entire map, and Max revamped the car movement with a custom camera. The main and gameplay menus were completed, including a scoreboard and progress checks.<br><br> We added new obstacles like rolling snowballs and snowpiles, and reworked falling spikes. The map became massive, and with finished power-ups, gameplay was much more fun!</h3>
-                        <h4>(The full gameplay video is at the top of the page)</h4>
-                    </td>
-                    <td>
-                        <img width="450" height="300" src="WinterWonderRideSnowglobe.png" alt="Winter Wonder Ride Snowglobe">
-                    </td>
-                </tr>
-            </table>
-        </div>
-
-        <div class="video-left">
-            <table>
-                <tr>
-                    <td>
-                        <img width="500" height="300" src="Top10LB.png" alt="Top 10 Leaderboard">
-                    </td>
-                    <td class="w-3">
-                        <h3>Personal Challenges!</h3>
-                        <h3>A major challenge (and success) was managing multiple save slots. I used PlayerPrefs since I wasn't familiar with .Json files. 😭<br><br> I saved strings linked to file numbers (e.g., names with "nameFile" + fileNumber, cars with "whichCar" + fileNumber, etc.).</h3>
-                    </td>
-                </tr>
-            </table>
-        </div>
-
-        <div class="video-right">
-            <table>
-                <tr>
-                    <td class="w-3">
-                        <h3>Saving became tricky with the TOP10, as I couldn't link file names to the sorted top 10. I solved this by creating a scriptable object for each file, naming them by their deltaTime float value. This allowed me to sort and display them in the UI based on the sorted array.</h3>
-                    </td>
-                    <td>
-                        <video width="500" height="300" src="MenuShowcase.mp4" controls></video>
-                    </td>
-                </tr>
-            </table>
+        <div class="media">
+            <video src="Sprint1.mp4" controls></video>
         </div>
     </div>
 
-    <h1>gay ahaha</h1>
+    <div class="content-row">
+        <div class="media">
+            <video src="Sprint2.mp4" controls></video>
+        </div>
+        <div class="text">
+            <h3>Sprint 2! - Alpha</h3>
+            <h3>The 2nd sprint was even more chaotic, and we fell behind schedule. The car was more drivable but still hard to control, bouncing and sliding around.<br><br> I created icicle obstacles that caused players to get stuck in the cave for a while. The artists started texturing models, and the menu received minor updates.</h3>
+        </div>
+    </div>
+
+    <div class="content-row">
+        <div class="text">
+            <h3>Sprint 3! - Beta</h3>
+            <h3>The third sprint was intense. The artists remade the entire map, and Max revamped the car movement with a custom camera. The main and gameplay menus were completed, including a scoreboard and progress checks.<br><br> We added new obstacles like rolling snowballs and snowpiles, and reworked falling spikes. The map became massive, and with finished power-ups, gameplay was much more fun!</h3>
+            <h4>(The full gameplay video is at the top of the page)</h4>
+        </div>
+        <div class="media">
+            <img src="WinterWonderRideSnowglobe.png" alt="Winter Wonder Ride Snowglobe">
+        </div>
+    </div>
+
+    <div class="content-row">
+        <div class="media">
+            <img src="Top10LB.png" alt="Top 10 Leaderboard">
+        </div>
+        <div class="text">
+            <h3>Personal Challenges!</h3>
+            <h3>A major challenge (and success) was managing multiple save slots. I used PlayerPrefs since I wasn't familiar with .Json files. 😭<br><br> I saved strings linked to file numbers (e.g., names with "nameFile" + fileNumber, cars with "whichCar" + fileNumber, etc.).</h3>
+        </div>
+    </div>
+
+    <div class="content-row">
+        <div class="text">
+            <h3>Saving became tricky with the TOP10, as I couldn't link file names to the sorted top 10. I solved this by creating a scriptable object for each file, naming them by their deltaTime float value. This allowed me to sort and display them in the UI based on the sorted array.</h3>
+        </div>
+        <div class="media">
+            <video src="MenuShowcase.mp4" controls></video>
+        </div>
+    </div>
+</div>
 </body>
 </html>
